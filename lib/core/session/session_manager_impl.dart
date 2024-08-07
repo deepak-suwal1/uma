@@ -42,17 +42,6 @@ class SessionManagerImpl extends SessionManager {
   }
 
   @override
-  Future<bool?> isCheckedIn() async {
-    final checkedIn = await storage.read(key: checkedInKey);
-    return checkedIn == 'true';
-  }
-
-  @override
-  Future<void> saveCheckedIn(String checkedIn) async {
-    storage.write(key: checkedInKey, value: checkedIn);
-  }
-
-  @override
   Future<void> clearSession() async {
     await storage.deleteAll();
   }

@@ -1,10 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:uhuru/config/app_config.dart';
 import 'package:uhuru/config/routes/app_router.gr.dart';
 import 'package:uhuru/core/constants/app_colors.dart';
 import 'package:uhuru/core/constants/assets.dart';
 import 'package:uhuru/core/constants/constants.dart';
+import 'package:uhuru/core/injection/injection.dart';
 import 'package:uhuru/core/utils/extension.dart';
 import 'package:uhuru/features/common/presentation/widgets/app_button.dart';
 
@@ -55,7 +57,8 @@ class WelcomePage extends StatelessWidget {
                     Align(
                       alignment: Alignment.centerRight,
                       child: InkWell(
-                        onTap: () {
+                        onTap: () async {
+                          getIt<AppConfig>().markOnboardingAsShown();
                           context.router.replace(LoginSignUpRoute());
                         },
                         child: const Text(

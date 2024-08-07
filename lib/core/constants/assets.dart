@@ -5,6 +5,7 @@ const String arrowUp = '$imagePath/svg/arrow_up.svg';
 const String appLogo = '$imagePath/svg/logo.svg';
 const String splashLogo = '$imagePath/svg/splash_logo.svg';
 const String welcomeLogo = '$imagePath/svg/welcome_logo.svg';
+const String google = '$imagePath/svg/google.svg';
 
 //png
 const String onBoarding1 = '$imagePath/onboarding1.png';

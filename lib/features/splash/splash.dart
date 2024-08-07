@@ -17,7 +17,7 @@ class SplashPageState extends State<SplashPage> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 3), () {
-      context.router.replace(const WelcomeRoute());
+      context.router.replace(const DashboardRoute());
     });
   }
 

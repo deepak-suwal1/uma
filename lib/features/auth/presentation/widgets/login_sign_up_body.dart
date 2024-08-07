@@ -1,3 +1,4 @@
+import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:form_validator/form_validator.dart';
@@ -6,11 +7,11 @@ import 'package:uhuru/core/constants/assets.dart';
 import 'package:uhuru/core/constants/constants.dart';
 import 'package:uhuru/core/utils/extension.dart';
 import 'package:uhuru/features/common/presentation/widgets/app_button.dart';
-import 'package:uhuru/features/common/presentation/widgets/app_dropdown.dart';
 import 'package:uhuru/features/common/presentation/widgets/app_text_field.dart';
 
 class LoginSignUpBody extends StatelessWidget {
   final TextEditingController phoneController;
+  final TextEditingController countryCodeController;
   final GlobalKey formKey;
   final Function()? onContinuePressed;
   final Function()? onGoogleLoginPressed;
@@ -18,6 +19,7 @@ class LoginSignUpBody extends StatelessWidget {
 
   const LoginSignUpBody({
     super.key,
+    required this.countryCodeController,
     required this.phoneController,
     required this.formKey,
     this.onContinuePressed,
@@ -33,12 +35,21 @@ class LoginSignUpBody extends StatelessWidget {
         child: Column(
           children: [
             32.verticalSpace,
-            AppDropdown(
-              hint: 'Select',
-              items: const ['United States (+1)', 'Nepal (+977)'],
-              selectedItem: 'United States (+1)',
-              onChanged: (v) {},
-              itemToString: (v) => v,
+            AppTextField(
+              hint: 'Select Country Code',
+              readOnly: true,
+              controller: countryCodeController,
+              suffixIcon: const Icon(Icons.arrow_drop_down),
+              onTap: () {
+                showCountryPicker(
+                  context: context,
+                  showPhoneCode: true,
+                  onSelect: (Country country) {
+                    countryCodeController.text =
+                        '${country.flagEmoji} ${country.displayName}';
+                  },
+                );
+              },
             ),
             24.verticalSpace,
             AppTextField(
@@ -102,7 +113,7 @@ class LoginSignUpBody extends StatelessWidget {
               backgroundColor: whiteColor,
               iconWidget: const Icon(
                 Icons.apple,
-                size: 20,
+                size: 24,
                 color: blackColor,
               ),
               onPressed: () {},
@@ -111,11 +122,7 @@ class LoginSignUpBody extends StatelessWidget {
             AppButton(
               buttonText: 'Continue with Google',
               backgroundColor: whiteColor,
-              iconWidget: const Icon(
-                Icons.apple,
-                size: 20,
-                color: blackColor,
-              ),
+              iconWidget: SvgPicture.asset(google),
               onPressed: onGoogleLoginPressed,
             ),
             16.verticalSpace,

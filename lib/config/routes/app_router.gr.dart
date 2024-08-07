@@ -81,11 +81,9 @@ abstract class $AppRouter extends _i13.RootStackRouter {
       );
     },
     OnboardingRoute.name: (routeData) {
-      final args = routeData.argsAs<OnboardingRouteArgs>(
-          orElse: () => const OnboardingRouteArgs());
       return _i13.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i7.OnboardingPage(key: args.key),
+        child: const _i7.OnboardingPage(),
       );
     },
     OtpVerificationRoute.name: (routeData) {
@@ -251,31 +249,16 @@ class LoginSignUpRouteArgs {
 
 /// generated route for
 /// [_i7.OnboardingPage]
-class OnboardingRoute extends _i13.PageRouteInfo<OnboardingRouteArgs> {
-  OnboardingRoute({
-    _i14.Key? key,
-    List<_i13.PageRouteInfo>? children,
-  }) : super(
+class OnboardingRoute extends _i13.PageRouteInfo<void> {
+  const OnboardingRoute({List<_i13.PageRouteInfo>? children})
+      : super(
           OnboardingRoute.name,
-          args: OnboardingRouteArgs(key: key),
           initialChildren: children,
         );
 
   static const String name = 'OnboardingRoute';
 
-  static const _i13.PageInfo<OnboardingRouteArgs> page =
-      _i13.PageInfo<OnboardingRouteArgs>(name);
-}
-
-class OnboardingRouteArgs {
-  const OnboardingRouteArgs({this.key});
-
-  final _i14.Key? key;
-
-  @override
-  String toString() {
-    return 'OnboardingRouteArgs{key: $key}';
-  }
+  static const _i13.PageInfo<void> page = _i13.PageInfo<void>(name);
 }
 
 /// generated route for

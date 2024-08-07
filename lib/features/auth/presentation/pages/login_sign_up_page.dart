@@ -13,6 +13,7 @@ class LoginSignUpPage extends StatelessWidget {
   LoginSignUpPage({super.key});
 
   final phoneController = TextEditingController();
+  final countryCodeController = TextEditingController();
   final formKey = GlobalKey<FormState>();
   final authBloc = getIt<AuthBloc>();
 
@@ -31,9 +32,12 @@ class LoginSignUpPage extends StatelessWidget {
         child: AuthBaseView(
           title: 'Login or Sign Up',
           body: LoginSignUpBody(
+            countryCodeController: countryCodeController,
             phoneController: phoneController,
             formKey: formKey,
-            onContinuePressed: () {},
+            onContinuePressed: () {
+              context.router.push(const SignUpRoute());
+            },
             onContinueWithEmailPressed: () {
               context.router.push(const LoginRoute());
             },

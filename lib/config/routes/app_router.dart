@@ -1,6 +1,8 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:uhuru/core/injection/injection.dart';
 
 import 'app_router.gr.dart';
+import 'auth_guard.dart';
 
 @AutoRouterConfig()
 class AppRouter extends $AppRouter {
@@ -17,8 +19,7 @@ class AppRouter extends $AppRouter {
         AutoRoute(page: ResetPasswordRoute.page),
         AutoRoute(
           page: DashboardRoute.page,
-
-          // guards: [getIt<AuthGuard>()],
+          guards: [getIt<AuthGuard>()],
           children: [
             AutoRoute(page: HomeRoute.page),
             AutoRoute(page: HomeRoute.page),
