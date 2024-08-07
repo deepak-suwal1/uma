@@ -1,0 +1,43 @@
+{
+  "project_info": {
+    "project_number": "601710737914",
+    "project_id": "uhuru-a6aba",
+    "storage_bucket": "uhuru-a6aba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:601710737914:android:939cdd728e65487b2e8c43",
+        "android_client_info": {
+          "package_name": "com.threebird.uhuru"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "601710737914-gmd9779bak0sjt9rr25u49e873uedn4i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.threebird.uhuru",
+            "certificate_hash": "60f441d7e07816ba37d136c1960b3c10db0b064a"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_RDoNewVNcxxCFL1g4Gpwx8j4titgiwM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "601710737914-0vfvesnlsnu1anjl72jh9eofmqgn8i3s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

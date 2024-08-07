@@ -1,0 +1,68 @@
+name: uhuru
+description: "A new Flutter project."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.4 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  auto_route: ^8.2.0
+  flutter_svg: ^2.0.10+1
+  flutter_bloc: ^8.1.6
+  get_it: ^7.7.0
+  dio: ^5.5.0+1
+  injectable: ^2.4.4
+  form_validator: ^2.1.1
+  flutter_secure_storage: ^9.2.2
+  google_sign_in: ^6.2.1
+  fpdart: ^1.1.0
+  json_serializable: ^6.8.0
+  json_annotation: ^4.9.0
+  intl: ^0.19.0
+  pin_code_fields: ^8.0.1
+  smooth_page_indicator: ^1.2.0+3
+  cached_network_image: ^3.4.0
+  carousel_slider: ^4.2.1
+  graphql_flutter: ^5.1.2
+  flutter_native_splash: ^2.4.1
+
+dev_dependencies:
+  flutter_lints: ^4.0.0
+  auto_route_generator: ^8.0.0
+  build_runner: ^2.4.11
+  injectable_generator: ^2.6.1
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/images/svg/
+
+  fonts:
+    - family: BDLifelessGrotesk-Black
+      fonts:
+        - asset: assets/fonts/BDLifelessGrotesk-Black.otf
+
+    - family: BDLifelessGrotesk-Bold
+      fonts:
+        - asset: assets/fonts/BDLifelessGrotesk-Bold.otf
+
+    - family: BDLifelessGrotesk-SemiBold
+      fonts:
+        - asset: assets/fonts/BDLifelessGrotesk-SemiBold.otf
+
+    - family: BDLifelessGrotesk-Medium
+      fonts:
+        - asset: assets/fonts/BDLifelessGrotesk-Medium.otf
+
+    - family: BDLifelessGrotesk-Regular
+      fonts:
+        - asset: assets/fonts/BDLifelessGrotesk-Regular.otf
+
